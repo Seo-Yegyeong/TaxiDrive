@@ -3,6 +3,7 @@ package com.drive;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class TaxiController {
@@ -11,4 +12,8 @@ public class TaxiController {
         return "index";
     }
 
+    @RequestMapping(value = "main", method = RequestMethod.GET)
+    public void showMain(){
+
+    }
 }
