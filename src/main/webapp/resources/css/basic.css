@@ -1,0 +1,13 @@
+header {
+    padding: 20px;
+    background-color: whitesmoke;
+    box-shadow: dimgrey;
+}
+
+bottom {
+    color: orange;
+    font-size: 50px;
+}
+body {
+    background-color: lightpink;
+}
