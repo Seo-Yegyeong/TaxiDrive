@@ -2,7 +2,7 @@ package com.drive;
 
 import java.util.Date;
 
-public class TaxiVO {
+public class DriveVO {
     private int id;
     private String username;
     private String phonenumber;

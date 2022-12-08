@@ -7,10 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 
 @Repository
-public class TaxiDAO {
+public class DriveDAO {
 
     @Autowired
     private JdbcTemplate template;
@@ -25,7 +24,7 @@ public class TaxiDAO {
     private final String DRIVE_DELETE = "delete from DRIVE where id=?";
 
 
-    public int insertDRIVE(TaxiVO vo) {
+    public int insertDRIVE(DriveVO vo) {
         return template.update(DRIVE_INSERT, new
                 Object[]{vo.getUsername(), vo.getPhonenumber(), vo.getDeparture(), vo.getArrival(), vo.getGrade(), vo.getReserveDate(), vo.isWheelchair()});
     }
@@ -35,17 +34,17 @@ public class TaxiDAO {
         return template.update(DRIVE_DELETE, new Object[]{id});
     }
 
-    public int updateDRIVE(TaxiVO vo){
+    public int updateDRIVE(DriveVO vo){
         return template.update(DRIVE_UPDATE, new Object[]{vo.getUsername(), vo.getPhonenumber(), vo.getDeparture(), vo.getArrival(), vo.getGrade(), vo.getReserveDate(), vo.isWheelchair(), vo.getId()});
     }
 
 }
 
 /*this class is for showing data list*/
-class DriveRowMapper implements RowMapper<TaxiVO> {
+class DriveRowMapper implements RowMapper<DriveVO> {
     @Override
-    public TaxiVO mapRow(ResultSet rs, int rowNum) throws SQLException {
-        TaxiVO vo = new TaxiVO();
+    public DriveVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+        DriveVO vo = new DriveVO();
         vo.setId(rs.getInt("id"));
         vo.setUsername(rs.getString("username"));
         vo.setPhonenumber(rs.getString("phonenumber"));
@@ -57,7 +56,7 @@ class DriveRowMapper implements RowMapper<TaxiVO> {
         return vo;
     }
 
-//    public TaxiVO getDrive(int id){
+//    public DriveVO getDrive(int id){
 //        return
 //    }
 }
